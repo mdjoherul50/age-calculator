@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advanced Age Calculator</title>
+  
+  <!-- Flatpickr CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <style>
+   
+  </style>
+</head>
+<body>
+  <main class="calculator" role="main" aria-label="Advanced age calculator">
+    <h1><i class="fas fa-calculator"></i> Advanced Age Calculator</h1>
+    
+    <div class="tabs">
+      <div class="tab active" data-tab="calculator">Calculator</div>
+      <div class="tab" data-tab="history">History</div>
+      <div class="tab" data-tab="milestones">Milestones</div>
+    </div>
+    
+    <div class="error" id="error" role="alert"></div>
+    
+    <div class="tab-content active" id="calculator-tab">
+      <div class="info">
+        <i class="fas fa-info-circle"></i> Calculate your exact age in years, months, and days
+      </div>
+      
+      <div class="input-group">
+        <label for="dob">Date of Birth</label>
+        <input type="text" id="dob" placeholder="Select your date of birth" aria-required="true" readonly />
+        <i class="fas fa-calendar-alt input-icon" id="dob-icon"></i>
+      </div>
+      
+      <div class="input-group">
+        <label for="currentDate">Current Date</label>
+        <input type="text" id="currentDate" placeholder="Select the current date" aria-required="true" readonly />
+        <i class="fas fa-calendar-alt input-icon" id="currentDate-icon"></i>
+      </div>
+
+      <button id="calculateBtn" aria-label="Calculate Age">
+        <i class="fas fa-calculator"></i> Calculate Age
+      </button>
+
+      <div class="result" id="result" tabindex="0" aria-live="polite" aria-atomic="true">
+        <button class="copy-btn" id="copyBtn" aria-label="Copy result to clipboard">
+          <i class="far fa-copy"></i> Copy
+        </button>
+        <div>Your age is:</div>
+        <div class="age-display">
+          <div class="age-unit">
+            <div class="age-value" id="years">0</div>
+            <div class="age-label">Years</div>
+          </div>
+          <div class="divider">|</div>
+          <div class="age-unit">
+            <div class="age-value" id="months">0</div>
+            <div class="age-label">Months</div>
+          </div>
+          <div class="divider">|</div>
+          <div class="age-unit">
+            <div class="age-value" id="days">0</div>
+            <div class="age-label">Days</div>
+          </div>
+        </div>
+        
+        <div class="additional-info">
+          <div class="info-item">
+            <span class="info-label">Next birthday:</span>
+            <span class="info-value" id="nextBirthday">-</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Age in days:</span>
+            <span class="info-value" id="ageInDays">0</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Age in hours:</span>
+            <span class="info-value" id="ageInHours">0</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Zodiac sign:</span>
+            <span class="info-value" id="zodiacSign">-</span>
+          </div>
+        </div>
+      </div>
+      
+      <button class="save-btn" id="saveBtn">
+        <i class="fas fa-save"></i> Save Calculation
+      </button>
+    </div>
+    
+    <div class="tab-content" id="history-tab">
+      <div class="info">
+        <i class="fas fa-history"></i> Your previously calculated ages
+      </div>
+      
+      <div class="history-list" id="historyList">
+        <!-- History items will be added here dynamically -->
+        <div class="no-history">No history yet. Calculate some ages first!</div>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="milestones-tab">
+      <div class="info">
+        <i class="fas fa-star"></i> Important age milestones
+      </div>
+      
+      <div class="timeline" id="milestonesTimeline">
+        <div class="timeline-item">
+          <div class="timeline-date">18 years</div>
+          <div class="timeline-text">Legal adulthood in most countries</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">21 years</div>
+          <div class="timeline-text">Legal drinking age in some countries</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">30 years</div>
+          <div class="timeline-text">Typical "young adult" threshold</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">40 years</div>
+          <div class="timeline-text">Middle age begins</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">65 years</div>
+          <div class="timeline-text">Traditional retirement age</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Flatpickr JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script>
+  
+  </script>
+</body>
+</html>
